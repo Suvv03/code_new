@@ -140,8 +140,8 @@ def mirror_hsi(height, width, band, input_normalize, patch=5):
 #   - temp_image: 提取的patch (patch, patch, band)，包含空间邻域信息
 # =============================================================================
 def gain_neighborhood_pixel(mirror_image, point, i, patch=5):
-    x = point[i, 0]  # 获取y坐标
-    y = point[i, 1]  # 获取x坐标
+    x = point[i, 0]   # 获取行索引（对应y坐标/垂直位置）
+    y = point[i, 1]  # 获取列索引（对应x坐标/水平位置）
     # 从镜像图像中提取patch
     temp_image = mirror_image[x:(x + patch), y:(y + patch), :]
     return temp_image
